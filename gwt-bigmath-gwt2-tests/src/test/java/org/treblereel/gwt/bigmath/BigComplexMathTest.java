@@ -52,20 +52,6 @@ public class BigComplexMathTest extends GWTTestCase {
     assertEquals(BigComplex.valueOf(120), BigComplexMath.factorial(BigComplex.valueOf(5), MC));
   }
 
-  // TODO
-
-  /*
-  @Test
-  public void testFactorialHighPrecision() {
-      // Wolfram Alpha: factorial(1.2 + 2.3 i)
-      assertPrecisionCalculation(
-              BigComplex.valueOf(
-                      new BigDecimal("-0.0459981123305585249681603480968269660113873556089014470248069472979754564331678182847798134586963875663871893"),
-                      new BigDecimal("0.312560954529664888473258907702587964452355919300835979305316051616804053286423048624964580542939407812546590")),
-              (mc) -> BigComplexMath.factorial(BigComplex.valueOf(1.2, 2.3), mc),
-              5);
-  }
-  */
   private void assertPrecisionCalculation(
       BigComplex expected,
       Function<MathContext, BigComplex> precisionCalculation,
@@ -111,14 +97,6 @@ public class BigComplexMathTest extends GWTTestCase {
             .round(MC),
         (mc) -> BigComplexMath.sin(BigComplex.valueOf(1, 2), mc),
         5);
-  }
-  /*
-  @Test
-  public void testCos() {
-      assertPrecisionCalculation(
-              BigComplex.valueOf(new BigDecimal("2.03272300701966552943634344849951426373199040663875238194"), new BigDecimal("-3.05189779915180005751211568689510545288843761773331964466")).round(MC),
-              (mc) -> BigComplexMath.cos(BigComplex.valueOf(1, 2), mc),
-              5);
   }
 
   @Test
@@ -220,7 +198,7 @@ public class BigComplexMathTest extends GWTTestCase {
               BigComplex.valueOf(new BigDecimal("0.23182380450040305810712811573060720101426852714306013190"), new BigDecimal("-0.40235947810852509365018983330654690988140033856712943047")).round(MC),
               (mc) -> BigComplexMath.acot(BigComplex.valueOf(1, 2), mc),
               5);
-  }*/
+  }
 
   @Override
   public String getModuleName() {
