@@ -2,15 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.treblereel.gwt</groupId>
-    <artifactId>gwt-bigmath-parent</artifactId>
-    <version>2.3.0</version>
-    <relativePath>..</relativePath>
-  </parent>
-
+  <groupId>org.treblereel.gwt</groupId>
   <artifactId>gwt-bigmath</artifactId>
-  <version>2.3.0</version>
+  <version>2.3.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>GWT-BIGMATH</name>
@@ -38,7 +32,7 @@
 
   <scm>
     <connection>scm:git:git://github.com/treblereel/gwt-bigmath.git</connection>
-    <developerConnection>scm:git:ssh://github.com/treblereel/gwt-bigmath.git</developerConnection>
+    <developerConnection>scm:git:https://github.com/treblereel/gwt-bigmath.git</developerConnection>
     <url>https://github.com/treblereel/gwt-bigmath/tree/master</url>
   </scm>
 
@@ -46,8 +40,6 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <elemental2.version>1.0.0-RC1</elemental2.version>
 
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -59,22 +51,7 @@
     <maven.licence.plugin>3.0</maven.licence.plugin>
     <maven.source.plugin>3.2.1</maven.source.plugin>
     <maven.deploy.plugin>3.0.0-M1</maven.deploy.plugin>
-
-    <jsinterop.annotations.version>1.0.2</jsinterop.annotations.version>
   </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.google.elemental2</groupId>
-      <artifactId>elemental2-core</artifactId>
-      <version>${elemental2.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.jsinterop</groupId>
-      <artifactId>jsinterop-annotations</artifactId>
-      <version>${jsinterop.annotations.version}</version>
-    </dependency>
-  </dependencies>
 
   <build>
     <resources>
@@ -89,48 +66,6 @@
       </resource>
     </resources>
     <plugins>
-      <plugin>
-        <groupId>com.mycila</groupId>
-        <artifactId>license-maven-plugin</artifactId>
-        <version>${maven.licence.plugin}</version>
-        <configuration>
-          <header>LICENSE.header</header>
-          <encoding>UTF-8</encoding>
-          <skipExistingHeaders>true</skipExistingHeaders>
-          <mapping>
-            <java>SLASHSTAR_STYLE</java>
-          </mapping>
-          <excludes>
-            <exclude>**/README.md</exclude>
-            <exclude>**/LICENSE</exclude>
-            <exclude>**/LICENSE.header</exclude>
-            <exclude>**/AUTHORS</exclude>
-            <exclude>**/*.xml</exclude>
-            <exclude>src/test/resources/**</exclude>
-            <exclude>src/main/resources/**</exclude>
-          </excludes>
-          <properties>
-            <year>${project.inceptionYear}</year>
-            <name>${project.organization.name}</name>
-          </properties>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <excludes>
-            <exclude>**/java/nio/**.class</exclude>
-          </excludes>
-        </configuration>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>

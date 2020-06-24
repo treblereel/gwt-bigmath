@@ -77,36 +77,5 @@
         </configuration>
       </plugin>
     </plugins>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>com.mycila</groupId>
-          <artifactId>license-maven-plugin</artifactId>
-          <version>${maven.licence.plugin}</version>
-          <configuration>
-            <header>LICENSE.header</header>
-            <encoding>${project.build.sourceEncoding}</encoding>
-            <skipExistingHeaders>true</skipExistingHeaders>
-            <mapping>
-              <java>SLASHSTAR_STYLE</java>
-            </mapping>
-            <includes>
-              <include>sec/test/java</include>
-            </includes>
-            <properties>
-              <year>${project.inceptionYear}</year>
-              <name>${project.organization.name}</name>
-            </properties>
-          </configuration>
-          <executions>
-            <execution>
-              <goals>
-                <goal>check</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-      </plugins>
-    </pluginManagement>
   </build>
 </project>
